@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Reinforcement Learning Task</title>
+
+  <!-- Load jquery and other libraries -->
+  <script src="./lib/jquery-min.js" type="text/javascript"></script>
+  <script src="./lib/underscore-min.js" type="text/javascript"></script>
+  <script src="./lib/backbone-min.js" type="text/javascript"></script>
+  <script src="./lib/d3.v3.min.js" type="text/javascript"> </script>
+
+  <!-- Load jsPsych and plugins -->
+  <script src="./js/jspsych/jspsych.js" type="text/javascript"></script>
+  <script src="./js/jspsych/plugins/jspsych-instructions.js" type="text/javascript"></script>
+  <script src="./js/jspsych/plugins/jspsych-html-keyboard-response.js" type="text/javascript"></script>
+  <script src="./js/jspsych/plugins/jspsych-image-keyboard-response.js" type="text/javascript"></script>
+  <script src="./js/jspsych/plugins/jspsych-feedback-image-keyboard-response.js" type="text/javascript">
+  </script>
+  <script src="./js/jspsych/plugins/jspsych-fullscreen.js" type="text/javascript"></script>
+
+  <!-- Load stylesheets and other utils -->
+  <script src="./js/utils.js" type="text/javascript"> </script>
+  <link rel="stylesheet" href="./css/jspsych.css" />
+</head>
+
+<body>
+  <div id='jspsych-target'></div>
+</body>
+
+<script>
+  var timeline = $.ajax('/get_rlwmpst_trials', {
+    type: "GET",
+    async: false,
+    success: function () {
+      console.log(timeline)
+      console.log('Data successfully loaded.')
+    }
+  })["responseJSON"];
+
+  /* start the experiment */
+  jsPsych.init({
+    timeline: timeline,
+    on_finish: function () {},
+    show_preload_progress_bar: true,
+    on_data_update: function (data) {},
+    default_iti: 0,
+  });
+</script>
+
+</html>
