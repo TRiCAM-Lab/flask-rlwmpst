@@ -8,3 +8,6 @@ gcloud run deploy flask-rlwmpst --region us-central1 --platform managed --image 
 
 echo "Serving on Firebase localhost:5000"
 firebase serve
+
+# echo "Serving on Firebase app page"
+# firebase deploy
