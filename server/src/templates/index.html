@@ -39,11 +39,14 @@
 <script>
   var timeline = $.ajax({
     type: "GET",
+    async: false,
     url: "/get_rlwmpst_trials.py",
     success: function () {
       console.log(timeline)
     }
   })
+
+  debugger
 
   /* start the experiment */
   jsPsych.init({

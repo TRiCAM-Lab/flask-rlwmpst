@@ -1,14 +1,7 @@
 import os
 from flask import Flask, render_template, make_response, Blueprint
-# import rlwmpst
 
 app = Flask(__name__)
-
-
-# @app.route('/get_rlwmpst_trials')
-# def get_rlwmpst_trials():
-#     '''get rlwmpst task logic to generate timeline'''
-#     return rlwmpst.get_trials()
 
 
 @app.route('/')
