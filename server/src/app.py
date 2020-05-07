@@ -1,5 +1,6 @@
 import os
 from flask import Flask, render_template, make_response, Blueprint
+import rlwmpst
 
 app = Flask(__name__)
 
@@ -14,6 +15,8 @@ def index():
 # @app.route('/get_rlwmpst_trials')
 # def get_rlwmpst_trials():
 #     return rlwmpst.get_trials()
+
+print(rlwmpst.get_trials())
 
 
 if __name__ == '__main__':
