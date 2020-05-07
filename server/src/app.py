@@ -1,21 +1,18 @@
 import os
 from flask import Flask, render_template, make_response, Blueprint
-import rlwmpst
-
 
 app = Flask(__name__)
 
 
-# @app.route('/', methods=['GET', 'POST'])
 @app.route('/')
 def index():
     '''flask by default will look for index.html'''
     return render_template('index.html')
 
 
+# @app.route('/', methods=['GET', 'POST'])
 # @app.route('/get_rlwmpst_trials')
 # def get_rlwmpst_trials():
-#     print('do i get here')
 #     return rlwmpst.get_trials()
 
 

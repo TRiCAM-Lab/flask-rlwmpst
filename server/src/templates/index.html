@@ -37,16 +37,20 @@
       type: "GET",
       async: false,
       url: "/get_rlwmpst_trials.py",
-      success: callbackFunc(),
+      success: callbackFunc(response),
       error: function () {
         console.log('there was an error')
         debugger
         alert("There was an error. Try again please!");
       }
     });
+
+    return timeline
   }
 
-  function callbackFunc() {
+  function callbackFunc(response) {
+    debugger
+
     // do something with the response
     console.log("success");
     console.log(timeline)
