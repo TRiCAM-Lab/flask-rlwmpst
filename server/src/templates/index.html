@@ -51,19 +51,16 @@
     console.log("success");
     console.log(timeline)
 
-    var timeline = generateTimeline()
-
-
-    /* start the experiment */
-    jsPsych.init({
-      timeline: timeline,
-      on_finish: function () {},
-      show_preload_progress_bar: true,
-      on_data_update: function (data) {},
-      default_iti: 0,
-    });
-
   }
+
+  /* start the experiment */
+  jsPsych.init({
+    timeline: generateTimeline(),
+    on_finish: function () {},
+    show_preload_progress_bar: true,
+    on_data_update: function (data) {},
+    default_iti: 0,
+  });
 </script>
 
 </html>

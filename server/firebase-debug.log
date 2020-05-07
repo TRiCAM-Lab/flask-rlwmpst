@@ -1,33 +1,31 @@
-[debug] [2020-05-07T16:24:11.496Z] ----------------------------------------------------------------------
-[debug] [2020-05-07T16:24:11.499Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2020-05-07T16:24:11.499Z] CLI Version:   8.2.0
-[debug] [2020-05-07T16:24:11.499Z] Platform:      darwin
-[debug] [2020-05-07T16:24:11.499Z] Node Version:  v13.6.0
-[debug] [2020-05-07T16:24:11.505Z] Time:          Thu May 07 2020 12:24:11 GMT-0400 (Eastern Daylight Time)
-[debug] [2020-05-07T16:24:11.505Z] ----------------------------------------------------------------------
-[debug] [2020-05-07T16:24:11.505Z] 
-[debug] [2020-05-07T16:24:11.517Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-05-07T16:24:11.518Z] > authorizing via signed-in user
-[debug] [2020-05-07T16:24:11.518Z] [iam] checking project rlwmpst for permissions ["firebase.projects.get"]
-[debug] [2020-05-07T16:24:11.522Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rlwmpst:testIamPermissions  
+[debug] [2020-05-07T16:45:29.305Z] ----------------------------------------------------------------------
+[debug] [2020-05-07T16:45:29.307Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-05-07T16:45:29.308Z] CLI Version:   8.2.0
+[debug] [2020-05-07T16:45:29.308Z] Platform:      darwin
+[debug] [2020-05-07T16:45:29.308Z] Node Version:  v13.6.0
+[debug] [2020-05-07T16:45:29.309Z] Time:          Thu May 07 2020 12:45:29 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-05-07T16:45:29.309Z] ----------------------------------------------------------------------
+[debug] [2020-05-07T16:45:29.309Z] 
+[debug] [2020-05-07T16:45:29.321Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-05-07T16:45:29.322Z] > authorizing via signed-in user
+[debug] [2020-05-07T16:45:29.323Z] [iam] checking project rlwmpst for permissions ["firebase.projects.get"]
+[debug] [2020-05-07T16:45:29.326Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rlwmpst:testIamPermissions  
  {"permissions":["firebase.projects.get"]}
-[debug] [2020-05-07T16:24:11.889Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:24:11 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=132","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
-[debug] [2020-05-07T16:24:11.890Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rlwmpst  
+[debug] [2020-05-07T16:45:29.671Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:45:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=136","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-07T16:45:29.672Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rlwmpst  
  
-[debug] [2020-05-07T16:24:12.329Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:24:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-07T16:45:29.976Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:45:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [info] 
 [info] === Serving from '/Users/wasita/Documents/GitHub/flask-rlwmpst'...
 [info] 
-[debug] [2020-05-07T16:24:12.331Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rlwmpst/webApps/-/config  
+[debug] [2020-05-07T16:45:29.978Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rlwmpst/webApps/-/config  
  
-[debug] [2020-05-07T16:24:12.976Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:24:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-07T16:45:30.421Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:45:30 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [info] i  hosting: Serving hosting files from: static
 [info] ✔  hosting: Local server: http://localhost:5000
 [info] [hosting] Cloud Run rewrite {"source":"**","run":{"serviceId":"flask-rlwmpst","region":"us-central1"}} triggered
 [info] [hosting] Looking up Cloud Run service "/v1alpha1/projects/rlwmpst/locations/us-central1/services/flask-rlwmpst" for its URL
-[debug] [2020-05-07T16:24:24.403Z] >>> HTTP REQUEST GET https://run.googleapis.com/v1alpha1/projects/rlwmpst/locations/us-central1/services/flask-rlwmpst  
+[debug] [2020-05-07T16:47:28.718Z] >>> HTTP REQUEST GET https://run.googleapis.com/v1alpha1/projects/rlwmpst/locations/us-central1/services/flask-rlwmpst  
  
-[debug] [2020-05-07T16:24:24.850Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:24:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-05-07T16:47:29.185Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Thu, 07 May 2020 16:47:29 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-27=\":443\"; ma=2592000,h3-25=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q049=\":443\"; ma=2592000,h3-Q048=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [info] [hosting] Rewriting / to https://flask-rlwmpst-h6jdcwfj5q-uc.a.run.app for Cloud Run service "flask-rlwmpst" for region "us-central1"
-[info] [hosting] Cloud Run rewrite {"source":"**","run":{"serviceId":"flask-rlwmpst","region":"us-central1"}} triggered
-[info] [hosting] Rewriting /lib/underscore-min.map to https://flask-rlwmpst-h6jdcwfj5q-uc.a.run.app for Cloud Run service "flask-rlwmpst" for region "us-central1"
