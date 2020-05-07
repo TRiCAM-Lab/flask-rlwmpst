@@ -6,7 +6,8 @@ import rlwmpst
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+# @app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     '''flask by default will look for index.html'''
     return render_template('index.html')
