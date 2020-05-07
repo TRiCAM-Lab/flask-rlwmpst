@@ -28,34 +28,27 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<!-- <body>
-  <h1>Flask</h1>
-</body> -->
-
-<!-- <body>
-  <div id='jspsych-target'></div>
-</body> -->
-
 <script>
   var timeline = $.ajax({
-    type: "GET",
-    async: false,
+    type: "POST",
     url: "/get_rlwmpst_trials.py",
     success: function () {
+
       console.log(timeline)
+
+      /* start the experiment */
+      jsPsych.init({
+        timeline: timeline,
+        on_finish: function () {},
+        show_preload_progress_bar: true,
+        on_data_update: function (data) {},
+        default_iti: 0,
+      });
+
     }
   })
 
   debugger
-
-  /* start the experiment */
-  jsPsych.init({
-    timeline: timeline,
-    on_finish: function () {},
-    show_preload_progress_bar: true,
-    on_data_update: function (data) {},
-    default_iti: 0,
-  });
 </script>
 
 </html>
