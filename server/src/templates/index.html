@@ -29,26 +29,41 @@
 </head>
 
 <script>
-  var timeline = $.ajax({
-    type: "POST",
-    url: "/get_rlwmpst_trials.py",
-    success: function () {
+  // send call 
+  console.log('sending call')
 
-      console.log(timeline)
+  function generateTimeline() {
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: "/get_rlwmpst_trials.py",
+      success: callbackFunc(),
+      error: function () {
+        console.log('there was an error')
+        debugger
+        alert("There was an error. Try again please!");
+      }
+    });
+  }
 
-      /* start the experiment */
-      jsPsych.init({
-        timeline: timeline,
-        on_finish: function () {},
-        show_preload_progress_bar: true,
-        on_data_update: function (data) {},
-        default_iti: 0,
-      });
+  function callbackFunc() {
+    // do something with the response
+    console.log("success");
+    console.log(timeline)
 
-    }
-  })
+    var timeline = generateTimeline()
 
-  debugger
+
+    /* start the experiment */
+    jsPsych.init({
+      timeline: timeline,
+      on_finish: function () {},
+      show_preload_progress_bar: true,
+      on_data_update: function (data) {},
+      default_iti: 0,
+    });
+
+  }
 </script>
 
 </html>
