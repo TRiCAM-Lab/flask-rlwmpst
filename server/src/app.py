@@ -1,5 +1,12 @@
 import os
 from flask import Flask, render_template, make_response, Blueprint
+
+import pandas as pd
+import numpy as np
+import os
+import json
+
+# import python files corresponding to each task
 import rlwmpst
 
 app = Flask(__name__)
@@ -11,12 +18,10 @@ def index():
     return render_template('index.html')
 
 
-# @app.route('/', methods=['GET', 'POST'])
-# @app.route('/get_rlwmpst_trials')
-# def get_rlwmpst_trials():
-#     return rlwmpst.get_trials()
-
-print(rlwmpst.get_trials())
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/get_rlwmpst_trials')
+def get_rlwmpst_trials():
+    return rlwmpst.get_trials()
 
 
 if __name__ == '__main__':

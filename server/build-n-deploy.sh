@@ -11,3 +11,6 @@ firebase serve
 
 # echo "Serving on Firebase app page"
 # firebase deploy
+
+# to test docker image locally:
+# PORT=8080 && docker run -p 9090:${PORT} -e PORT=${PORT} gcr.io/rlwmpst/flask-rlwmpst
