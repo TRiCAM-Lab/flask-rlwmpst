@@ -45,20 +45,20 @@
   //})["responseJSON"];
 
   //console.log(timeline)
-  const qualtrics = (HTML) => {
+  const qualtricsPage = (HTML) => {
     let stimulus = HTML;
 
     return {
       type: "html-keyboard-response",
       choices: jsPsych.NO_KEYS,
       stimulus: stimulus,
-      response_ends_trial: true,
-      on_load: () => {},
-      on_finish: (data) => {},
+      response_ends_trial: true
+      // on_load: () => {},
+      //on_finish: (data) => {},
     };
   };
 
-  var timeline_with_Qualtrics = qualtrics(qualtricsHTML)
+  var timeline_with_Qualtrics = qualtricsPage(qualtricsHTML)
 
   // jankily append qualtrics at end of python-generated task timeline
   // timeline.push(qualtrics)
