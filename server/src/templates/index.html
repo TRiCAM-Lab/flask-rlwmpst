@@ -45,8 +45,8 @@
   //})["responseJSON"];
 
   //console.log(timeline)
-  var qualtrics = () => {
-    let stimulus = qualtricsHTML;
+  const qualtrics = (HTML) => {
+    let stimulus = HTML;
 
     return {
       type: "html-keyboard-response",
@@ -58,12 +58,14 @@
     };
   };
 
+  var timeline_with_Qualtrics = qualtrics(qualtricsHTML)
+
   // jankily append qualtrics at end of python-generated task timeline
   // timeline.push(qualtrics)
 
   /* start the experiment */
   jsPsych.init({
-    timeline: qualtrics(qualtricsHTML),
+    timeline: timeline_with_Qualtrics,
     // timeline: timeline,
     on_finish: function () {},
     show_preload_progress_bar: true,
