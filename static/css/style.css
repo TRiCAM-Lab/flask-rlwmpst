@@ -54,6 +54,16 @@ h1 {
   font-size: 100%;
 }
 
+#iframe {
+  display: block;
+  position: absolute;
+  width: 100%;
+  border: none;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-radius: 5px;
+}
+
 .legal {
   text-align: justify;
   font-size: 11pt;
