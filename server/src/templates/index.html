@@ -49,7 +49,7 @@
     let stimulus = qualtricsHTML;
 
     return {
-      type: "html_keyboard_response",
+      type: "html-keyboard-response",
       choices: jsPsych.NO_KEYS,
       stimulus: stimulus,
       response_ends_trial: true,
@@ -58,10 +58,13 @@
     };
   };
 
+  // jankily append qualtrics at end of python-generated task timeline
+  // timeline.push(qualtrics)
 
   /* start the experiment */
   jsPsych.init({
-    timeline: qualtrics(),
+    timeline: qualtrics(qualtricsHTML),
+    // timeline: timeline,
     on_finish: function () {},
     show_preload_progress_bar: true,
     on_data_update: function (data) {},
