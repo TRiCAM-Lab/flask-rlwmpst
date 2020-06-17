@@ -6,8 +6,6 @@
  *
  **/
 
-console.log("do i get to jspsych.js loading?");
-
 window.jsPsych = (function () {
   var core = {};
 
