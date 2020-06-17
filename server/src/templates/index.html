@@ -23,7 +23,7 @@
   <script src="js/jspsych/plugins/jspsych-fullscreen.js" type="text/javascript"></script>
 
   <!-- Load Qualtrics iFrame HTML -->
-  <script src="js/lib/markup/qualtrics.js" type="text/javascript"></script>
+  <!-- <script src="js/lib/markup/qualtrics.js" type="text/javascript"></script> -->
   <!-- <script src="js/qualtrics.js" type="text/javascript"></script> -->
 
   <!-- Load stylesheets and other utils -->
@@ -45,7 +45,7 @@
   //})["responseJSON"];
 
   var qualtricsPage = {
-    type: 'html-button-response',
+    type: 'html-keyboard-response',
     stimulus: [
       '<div id="iframe"> <iframe width="900" height="900"' +
       ' src="https://brown.co1.qualtrics.com/jfe/form/SV_6xNgXiaN1eyozkh"' +
@@ -54,12 +54,13 @@
     ],
     choices: jsPsych.NO_KEYS
   }
+
   // jankily append qualtrics at end of python-generated task timeline
   // timeline.push(qualtricsPage)
 
   /* start the experiment */
   jsPsych.init({
-    timeline: qualtricsPage,
+    timeline: [qualtricsPage],
     // timeline: timeline,
     on_finish: function () {},
     show_preload_progress_bar: true,
