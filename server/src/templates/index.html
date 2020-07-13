@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>RLWMPST</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
 
     <!-- Load jquery and other libraries -->
     <script src="lib/jquery-min.js" type="text/javascript"></script>
@@ -45,6 +48,21 @@
   </head>
 
   <script>
+    // set web app's firebase config
+    var firebaseConfig = {
+      apiKey: "AIzaSyBElEjhQw7lqHBFr7l_1dks3BkZWDF-5hk",
+      authDomain: "rlwmpst.firebaseapp.com",
+      databaseURL: "https://rlwmpst.firebaseio.com",
+      projectId: "rlwmpst",
+      storageBucket: "rlwmpst.appspot.com",
+      messagingSenderId: "371606684750",
+      appId: "1:371606684750:web:8c1138f154bbaae68eaf1f",
+      measurementId: "G-5Y56GL1T6C",
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
     // call python script to generate task timeline
     var rlwmpst_trials = $.ajax("/get_rlwmpst_trials", {
       type: "GET",
@@ -54,15 +72,22 @@
       },
     })["responseJSON"];
 
-    // jankily append qualtrics at beginning of python-generated task timeline
-    // rlwmpst_trials.unshift(consentPage);
-
     /* start the experiment */
     jsPsych.init({
       timeline: rlwmpst_trials,
       on_finish: function () {},
       show_preload_progress_bar: true,
-      on_data_update: function (data) {},
+      on_data_update: function (data) {
+        console.log(data);
+
+        if (data.trial_index === 1) {
+          createFirebaseDocument(data.uniqueId);
+          addToFirebase(data);
+        }
+        if (data.trial_index > 1) {
+          addToFirebase(data);
+        }
+      },
       default_iti: 0,
     });
   </script>
