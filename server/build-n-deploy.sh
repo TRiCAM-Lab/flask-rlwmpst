@@ -6,7 +6,7 @@ gcloud builds submit --tag gcr.io/rlwmpst/flask-rlwmpst
 echo "Deploy to Firebase"
 gcloud run deploy flask-rlwmpst --region us-central1 --platform managed --image gcr.io/rlwmpst/flask-rlwmpst
 
-echo "Serving on Firebase localhost:5000"
+echo "Serving on Firebase localhost:5005"
 firebase serve
 
 # echo "Serving on Firebase app page"
@@ -17,6 +17,6 @@ firebase serve
 
 # RELEVANT LINKS:
 # https://rlwmpst.web.app/
-# http://localhost:5000/
+# http://localhost:5005/
 # https://cntracs.herokuapp.com/
 # https://cloud.google.com/run/docs/troubleshooting

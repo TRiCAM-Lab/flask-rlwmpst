@@ -49,6 +49,21 @@
 }
 
 
+.main-prompt,
+.task-container {
+    height: 100vh;
+    width: 85vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center !important;
+}
+
+.main-prompt {
+    margin-bottom: -20%;
+}
+
 
 /* fonts and type */
 
