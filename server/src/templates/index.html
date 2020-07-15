@@ -63,8 +63,34 @@
       measurementId: "G-5Y56GL1T6C",
     };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    // Get a Firestore instance
+    const db = firebase.initializeApp(firebaseConfig).firestore();
+
+    const collectionName = "db_pilot_test";
+
+    // Add data to db
+    const createFirebaseDocument = (uniqueId) => {
+      db.collection(collectionName).doc(uniqueId).set({
+        uniqueId,
+        dateCreated: new Date(),
+      });
+    };
+
+    // create a document in the collection with a random id
+    const createFirebaseDocumentRandom = () => {
+      db.collection(collectionName).add({
+        dateCreated: new Date(),
+      });
+    };
+
+    const addToFirebase = (data) => {
+      const uniqueId = data.uniqueId;
+      db.collection(collectionName)
+        .doc(uniqueId)
+        .collection("data")
+        .doc(`trial_${data.trial_index}`)
+        .set(data);
+    };
 
     // user ID collection
     // TO DO: add environment variable for MTURK/Prolific
@@ -122,6 +148,8 @@
         console.log("Data successfully loaded.");
       },
     })["responseJSON"];
+
+    // TO DO: prolific completion code URL redirection
 
     // append userId collection to beginning of timeline!
     rlwmpst_trials.unshift(userId());
