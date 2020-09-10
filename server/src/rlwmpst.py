@@ -19,7 +19,7 @@ def get_trials():
     local_path = os.getcwd()
     set_id = np.random.randint(1, 11)
     task_id = 4
-    feedback_delay = 1000  # previously 500 ms in wiecki version
+    feedback_delay = 1000  # previously 500 ms in wiecki/roche version
 
     base_path = os.path.join(local_path, 'static', 'rlwmpst', 'V{}'.format(
         task_id), 'S_{}'.format(set_id))

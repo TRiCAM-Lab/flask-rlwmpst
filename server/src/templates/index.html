@@ -51,6 +51,9 @@
   </head>
 
   <script>
+    // manually set firebase environment variable here
+    var FIREBASE_ENV = false;
+
     // set web app's firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyBElEjhQw7lqHBFr7l_1dks3BkZWDF-5hk",
@@ -123,7 +126,10 @@
       console.log(prolificId);
       const uniqueId = `${prolificId}`;
       console.log(uniqueId);
-      jsPsych.data.addProperties({ uniqueId: uniqueId, timestamp: Date.now() });
+      jsPsych.data.addProperties({
+        uniqueId: uniqueId,
+        timestamp: Date.now(),
+      });
     };
 
     const userId = () => {
