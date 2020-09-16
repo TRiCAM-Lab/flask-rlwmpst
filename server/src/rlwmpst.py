@@ -209,11 +209,15 @@ def create_feedback_trial(correct_key=None, reward_if_correct=None,
                               'static', 'images', 'small_reward.png'),
                           large_reward=os.path.join(
                               'static', 'images', 'large_reward.png'),
-                          no_reward=os.path.join('static', 'images', 'zero.png')):
+                          no_reward=os.path.join(
+                              'static', 'images', 'zero.png'),
+                          no_resp=os.path.join(
+                              'static', 'images', 'black.png')):
     trl = {'type': 'feedback-image-keyboard-response',
            'large_reward_path': large_reward,
            'small_reward_path': small_reward,
            'noreward_path': no_reward,
+           'noresp_path': no_resp,
            'correct_key': MAP_KBD[correct_key],
            'reward_if_correct': reward_if_correct,
            'trial_duration': 1000,

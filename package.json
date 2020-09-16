@@ -9,12 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "firebase-tools": "^8.1.1"
+    "firebase-tools": "^8.1.1",
+    "git-cz": "^4.7.1"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
     "env": "0.0.2",
     "firebase-admin": "^8.13.0"
   },
-  "description": ""
+  "description": "",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/git-cz"
+    }
+  }
 }
