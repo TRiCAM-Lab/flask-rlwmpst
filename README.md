@@ -31,5 +31,5 @@ npm install -D firebase-tools
 ```
 gcloud init
 ```
-6. Configure the task for firebase & Gcloud on their respective websites. 
+6. Configure the task for firebase & Gcloud on their respective websites. <b>Note from Wasita: better documentation pending...</b>
 7. After the task is set up to be hosted on firebase, you can run the bash script found in flask-rlwmpst/server/ to deploy the task.
