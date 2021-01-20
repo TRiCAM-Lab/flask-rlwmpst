@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "firebase-tools": "^8.1.1",
+    "firebase-tools": "^8.16.1",
     "git-cz": "^4.7.1"
   },
   "dependencies": {
@@ -17,10 +17,18 @@
     "env": "0.0.2",
     "firebase-admin": "^8.13.0"
   },
-  "description": "",
+  "description": "<p float=\"left\">   <img src=\"favicon.png\" width=\"200\" /> </p>",
   "config": {
     "commitizen": {
       "path": "./node_modules/git-cz"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TRiCAM-Lab/flask-rlwmpst.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TRiCAM-Lab/flask-rlwmpst/issues"
+  },
+  "homepage": "https://github.com/TRiCAM-Lab/flask-rlwmpst#readme"
 }
