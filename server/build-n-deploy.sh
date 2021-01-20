@@ -1,10 +1,11 @@
 #!/bin/bash
 
 echo "Build"
-gcloud builds submit --tag gcr.io/rlwmpst/flask-rlwmpst
+gcloud builds submit --tag gcr.io/reinforcement-learning-3b0d3/flask-rlwmpst
 
 echo "Deploy to Firebase"
-gcloud run deploy flask-rlwmpst --region us-central1 --platform managed --image gcr.io/rlwmpst/flask-rlwmpst
+gcloud run deploy flask-rlwmpst --region us-central1 --platform managed --image gcr.io/reinforcement-learning-3b0d3/flask-rlwmpst
+
 
 # echo "Serving on Firebase localhost:5005"
 # firebase serve
