@@ -146,6 +146,19 @@
   // append userId collection to beginning of timeline!
   rlwmpst_trials.unshift(userId());
 
+  // push the redirect to qualtrics on to the end of the timeline
+  const redirect_to_qualtrics = () => {
+    return{
+      type: "html-keyboard-response",
+      stimulus: "<div id='jspsych-instructions'><p>redirecting to survey...</p></div>",
+      trial_duration: 0,
+      on_finish: (data) => {
+        window.location.href = `https://umn.qualtrics.com/jfe/form/SV_eEDYQaN3wedjyqW?PROLIFIC_PID=${data.uniqueId}`;
+      },
+    }
+  }
+  rlwmpst_trials.push(redirect_to_qualtrics());
+  
   /* start the experiment */
   jsPsych.init({
     timeline: rlwmpst_trials,
