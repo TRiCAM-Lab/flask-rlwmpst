@@ -147,19 +147,19 @@
   // append userId collection to beginning of timeline!
   rlwmpst_trials.unshift(userId());
 
-  // push the redirect to qualtrics on to the end of the timeline
-  const redirect_to_qualtrics = () => {
+  // push the redirect to prolific on to the end of the timeline
+  const redirect_to_prolific = () => {
     return{
       type: "html-keyboard-response",
       stimulus: "<div id='jspsych-instructions'><p>redirecting to survey...</p></div>",
       trial_duration: 0,
       on_finish: (data) => {
-        window.location.href = `https://umn.qualtrics.com/jfe/form/SV_eEDYQaN3wedjyqW?PROLIFIC_PID=${data.uniqueId}`;
+        window.location.href = `https://app.prolific.co/submissions/complete?cc=2394EAA8`;
       },
     }
   }
-  rlwmpst_trials.push(redirect_to_qualtrics());
-  
+  rlwmpst_trials.push(redirect_to_prolific());
+
   /* start the experiment */
   jsPsych.init({
     timeline: rlwmpst_trials,
