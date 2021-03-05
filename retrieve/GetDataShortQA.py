@@ -1,4 +1,3 @@
-#import sys
 from collections.abc import Mapping
 
 import firebase_admin
@@ -9,31 +8,41 @@ from firebase_admin import firestore
 cred = credentials.Certificate('./service-account-key.json')
 firebase_admin.initialize_app(cred)
 
-#define database
+
 db = firestore.client()
 
-#potential way to pull ID names from a csv files
-#do this instead of getting all subjects
-#command call python GetData.py < IDs.csv
-# for row in sys.stdin:
-#     id = row.strip()
-#     sub = db.document(u'db_pilot_test', id).get()
-
-#Get all subjects
 subs = db.collection(u'db_pilot_test').stream()
 
-#loop through the subjects
 for sub in subs:
     print(f'{sub.id}, {sub.to_dict()}')
 
     # Get a collection from anywhere
     trials = db.collection(u'db_pilot_test', sub.id, u'data').stream()
-    print(f"getting training trials")
 
-    #Get just the training data
+    print(f"getting training trials")
     train_trials = [trial.to_dict() for trial in trials if trial.to_dict().get("train_or_test") == "train"]
 
-    #Get just
+    no_train_trials =  [
+        trial for trial in train_trials
+        if trial.get("key_press") == None
+    ]
+
+    correct_train_trials =  [
+        trial for trial in train_trials
+        if trial.get("key_press") == trial.get("correct_key")
+    ]
+
+    print(f"number of train trials: {len(train_trials)}")
+    print(f"number of no response train trials: {len(no_train_trials)}")
+    print(f"number of correct train trials: {len(correct_train_trials)}")
+
     trials = db.collection(u'db_pilot_test', sub.id, u'data').stream()
     print("getting test trials")
     test_trials = [trial.to_dict() for trial in trials if trial.to_dict().get("train_or_test") == "test"]
+
+    no_test_trials =  [
+        trial for trial in test_trials
+        if trial.get("key_press") == None
+    ]
+    print(f"number of test trials: {len(test_trials)}")
+    print(f"number of no response test trials: {len(no_test_trials)}")
