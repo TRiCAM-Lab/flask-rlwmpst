@@ -92,6 +92,9 @@
 
   // get prolific Id by parsing URl
   // TO DO: getMTurkId
+  var return_to;
+  var task_id;
+  var run_id;
   const getProlificId = (data) => {
     const currWindowURL = window.location.href;
     console.log(currWindowURL); // url
@@ -112,8 +115,15 @@
     console.log(prolificId);
     const uniqueId = `${prolificId}`;
     console.log(uniqueId);
+    run_id = getQueryVariable("run_id");
+    return_to = getQueryVariable("return_to");
+    task_id = getQueryVariable("task_id");
+    const uniqueRunId  = `${run_id}`;
+
+    
     jsPsych.data.addProperties({
       uniqueId: uniqueId,
+      run_id: uniqueRunId,
       PID: uniqueId,
       timestamp: Date.now(),
     });
@@ -148,22 +158,43 @@
   rlwmpst_trials.unshift(userId());
 
   // push the redirect to prolific on to the end of the timeline
-  const redirect_to_prolific = () => {
+  const redirect_to_router = () => {
     return{
       type: "html-keyboard-response",
       stimulus: "<div id='jspsych-instructions'><p>redirecting to survey...</p></div>",
       trial_duration: 0,
       on_finish: (data) => {
-        window.location.href = `https://app.prolific.co/submissions/complete?cc=2394EAA8`;
+        window.location.href = return_to; //`https://app.prolific.co/submissions/complete?cc=2394EAA8`;
       },
     }
   }
-  rlwmpst_trials.push(redirect_to_prolific());
+  rlwmpst_trials.push(redirect_to_router());
 
   /* start the experiment */
   jsPsych.init({
     timeline: rlwmpst_trials,
-    on_finish: function () {},
+    on_finish: function () {
+
+      const status = "COMPLETED"
+  
+      fetch('https://router.tricam.psych.umn.edu/cntracs/task/' + task_id, {
+        method: "POST",
+        cache: "no-cache",
+        body: JSON.stringify({"status": status, "payload": {"run_id": run_id}}),
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-API-TOKEN": "xihmuvoo06b4zwp"
+        }
+      }).then(response => {
+        console.log(response.status)
+        if (response.status !== 200) {
+          console.log('Looks like there was a problem. Status Code: ' + response.status);
+          return;
+        }
+      })
+
+    },
     show_preload_progress_bar: true,
     on_data_update: function (data) {
       console.log(data);
