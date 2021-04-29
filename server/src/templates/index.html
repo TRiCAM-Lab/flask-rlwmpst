@@ -120,7 +120,7 @@
     task_id = getQueryVariable("task_id");
     const uniqueRunId  = `${run_id}`;
 
-    
+
     jsPsych.data.addProperties({
       uniqueId: uniqueId,
       run_id: uniqueRunId,
@@ -164,7 +164,7 @@
       stimulus: "<div id='jspsych-instructions'><p>redirecting to survey...</p></div>",
       trial_duration: 0,
       on_finish: (data) => {
-        window.location.href = return_to; //`https://app.prolific.co/submissions/complete?cc=2394EAA8`;
+        window.location.href = return_to; 
       },
     }
   }
@@ -176,7 +176,7 @@
     on_finish: function () {
 
       const status = "COMPLETED"
-  
+
       fetch('https://router.tricam.psych.umn.edu/cntracs/task/' + task_id, {
         method: "POST",
         cache: "no-cache",
