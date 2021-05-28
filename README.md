@@ -17,7 +17,7 @@ Since the task uses a Python-based task logic (flask-rlwmpst/server/src/rlwmpst.
 ```
 git clone https://github.com/wasita/flask-rlwmpst.git
 ```
-2. Navigate to the flask-rlwmpst directory 
+2. Navigate to the flask-rlwmpst directory
 3. Install npm (via the terminal, once you're in the flask-rlwmpst directory) before installing the firebase tools package. You may first need to install Node.js (https://nodejs.org/en/download/) before being able to use npm commands in the terminal.
 ```
 npm install
@@ -32,4 +32,4 @@ npm install -D firebase-tools
 gcloud init
 ```
 6. Configure the task for firebase & Gcloud on their respective websites. <b>Note from Wasita: better documentation pending...</b>
-7. After the task is set up to be hosted on firebase, you can run the bash script found in flask-rlwmpst/server/ to deploy the task. Once the task is deployed, you can navigate to the link you've chosen (via firebase hosting) to host your task on in order to do the task there.
+7. After the task is set up to be hosted on firebase, you can run the bash script found in flask-rlwmpst/server/ to deploy the task (sh build-n-deploy.sh). Once the task is deployed, you can navigate to the link you've chosen (via firebase hosting) to host your task on in order to do the task there. To save the data, the task uses a query string in the URL (PID) to get the ID.
