@@ -168,7 +168,7 @@
       },
     }
   }
-  rlwmpst_trials.push(redirect_to_router());
+  // rlwmpst_trials.push(redirect_to_router());
 
   /* start the experiment */
   jsPsych.init({
@@ -192,6 +192,7 @@
           console.log('Looks like there was a problem. Status Code: ' + response.status);
           return;
         }
+        window.location.href = return_to;
       })
 
     },
